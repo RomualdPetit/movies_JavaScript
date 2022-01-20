@@ -10,7 +10,7 @@ movieSee.addEventListener("submit", (e) => {
   e.preventDefault();
   Display.innerHTML = "";
 
-  fetch(`http://www.omdbapi.com/?apikey=${apikey}&s=${searchInput.value}`)
+  fetch(`https://www.omdbapi.com/?apikey=${apikey}&s=${searchInput.value}`)
     .then((response) => response.json())
     .then((response) => {
       for (let movie of response.Search) {
@@ -19,7 +19,6 @@ movieSee.addEventListener("submit", (e) => {
     })
     .then(() => {
       let items = document.querySelectorAll(".card");
-      console.log(items);
       items.forEach(function (item) {
         item.classList.add("not-visible");
         observer.observe(item);
@@ -55,7 +54,7 @@ const displayMovie = (response) => {
 
 function test(imdbID) {
   console.log(imdbID);
-  fetch(`http://www.omdbapi.com/?apikey=${apikey}&i=${imdbID}`)
+  fetch(`https://www.omdbapi.com/?apikey=${apikey}&i=${imdbID}`)
     .then((response) => response.json())
     .then((response) => {
       displayModal(response);
@@ -107,7 +106,6 @@ function CloseModal() {
 let observer = new IntersectionObserver(
   function (observables) {
     observables.forEach(function (observable) {
-      console.log(observable);
       if (observable.intersectionRatio > 0) {
         observable.target.classList.remove("not-visible");
         console.log("Item visible");
