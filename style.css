@@ -1,0 +1,53 @@
+body {
+  background-color: #d5d5d5;
+}
+
+.btn-primary {
+  margin: 10px 0 10px;
+}
+
+.card {
+  border-radius: 10px;
+  width: 750px;
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.card.not-visible {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.row {
+  padding: 20px;
+}
+
+#modal {
+  width: 60%;
+  height: 70vh;
+  background-color: #ffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  z-index: 999;
+}
+
+#modal-bg {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: block;
+  z-index: 998;
+}
+
+.hidden {
+  display: none !important;
+}
